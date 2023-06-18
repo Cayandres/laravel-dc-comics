@@ -14,7 +14,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+        return view('comics.index');
     }
 
     /**
@@ -46,7 +46,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+
     }
 
     /**

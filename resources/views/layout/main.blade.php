@@ -22,6 +22,7 @@
     <main class="bg-light">
         <div class="container">
 
+            @yield('content')
 
         </div>
     </main>

@@ -5,21 +5,23 @@
 <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-        <th scope="col">Action</th>
+        <th scope="col">#id</th>
+        <th scope="col">Titolo</th>
+        <th scope="col">Prezzo</th>
+        <th scope="col">Azione</th>
+
+
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td><a href="{{ route('comics.show') }}" class="btn btn-primary">Vai</a></td>
-      </tr>
+        @foreach ($comics as $comic)
+        <tr>
+          <td>{{ $comic->id }}</td>
+          <td>{{ $comic->title }}</td>
+          <td>{{ $comic->price }}</td>
+          <td><a href="" class="btn btn-primary">Vai</a></td>
+        </tr>
+        @endforeach
     </tbody>
   </table>
 

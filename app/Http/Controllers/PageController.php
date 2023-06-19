@@ -11,4 +11,10 @@ class PageController extends Controller
         return view('layout.main');
 
     }
+
+    public function home(){
+
+        return view('partials.home');
+
+    }
 }

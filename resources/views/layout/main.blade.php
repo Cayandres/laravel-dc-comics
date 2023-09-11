@@ -20,7 +20,7 @@
     @include('partials.header')
 
     <main class="bg-light">
-        <div class="container">
+        <div class="ac-big-container">
 
             @yield('content')
 

@@ -6,38 +6,27 @@
             {{ session('deleted') }}
         </div>
     @endif
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope="col">#id</th>
-                <th scope="col">Titolo</th>
-                <th scope="col">Prezzo</th>
-                <th scope="col">Azione</th>
+            <main >
+                <div class="jumbotron">
+                  <img src="jumbotron.jpg" alt="">
+                </div>
+                <div class="container-background">
+                    <div class="container">
+                      <span class="ac-button-ad">
+                        <a  href="{{ route('comics.create') }}">ADD COMIC</a>
+                    </span>
+                    <span>CURRENT SERIES</span>
+                    @foreach ($comics as $comic)
+                    <a class="ac-card" href="{{ route('comics.show', $comic) }}">
+                          <div class="ac-card-image">
+                              <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                          </div>
+                          <h4>{{  $comic->title  }}</h4>
+                    </a>
+                    @endforeach
 
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($comics as $comic)
-                <tr>
-                    <td>{{ $comic->id }}</td>
-                    <td>{{ $comic->title }}</td>
-                    <td>{{ $comic->price }}</td>
-                    <td><a href="{{ route('comics.show', $comic) }}" class="btn btn-primary">Vai</a></td>
-                    <td><a href="{{ route('comics.create', $comic) }}" class="btn btn-secondary">Nuovo</a></td>
-                    <td><a href="{{ route('comics.edit', $comic) }}" class="btn btn-secondary">Modifica</a></td>
-                    <td>
-                        <form class="d-inline" action="{{ route('comics.destroy', $comic) }}" method="POST"
-                            onsubmit="return confirm('Confermi di volerlo eliminare')">
-
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger" title="Elimina">elmina</button>
-                        </form>
-                    </td>
-
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+                  </div>
+                </div>
+              </main>
 @endsection

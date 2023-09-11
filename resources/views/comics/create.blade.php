@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-    <div>
+    <div class="container text-light">
 
         <h1>Crezione Comics</h1>
         @if ($errors->any())

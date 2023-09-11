@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-    <div>
+    <div class="container pt-5 text-light">
 
         <h1>{{ $comic->title }}</h1>
         @if ($errors->any())

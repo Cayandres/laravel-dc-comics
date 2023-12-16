@@ -19,9 +19,13 @@
                     @foreach ($comics as $comic)
                     <a class="ac-card" href="{{ route('comics.show', $comic) }}">
                           <div class="ac-card-image">
-                              <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                            @if ($comic->thumb)
+                            <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                            @else
+                            <img src="placeholder.png" alt="vuoto">
+                            @endif
                           </div>
-                          <h4>{{  $comic->title  }}</h4>
+                          <h4>{{ Str::limit($comic->title, 15) }}</h4>
                     </a>
                     @endforeach
 

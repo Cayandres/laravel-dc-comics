@@ -1,6 +1,7 @@
 @extends('layout.main')
 
 @section('content')
+<div class="bg-dark">
     <div class="container text-light">
 
         <h1>Crezione Comics</h1>
@@ -80,4 +81,6 @@
 
 
     </div>
+</div>
+
 @endsection

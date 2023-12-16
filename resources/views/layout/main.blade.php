@@ -19,13 +19,10 @@
 
     @include('partials.header')
 
-    <main class="bg-light">
-        <div class="ac-big-container">
+    <main>
 
             @yield('content')
 
-
-        </div>
     </main>
 
 </body>
